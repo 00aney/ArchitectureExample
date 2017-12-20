@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+
+protocol CityListInteractorInputProtocol: class {
+  
+}
+
+
+class CityListInteractor: CityListInteractorInputProtocol {
+  weak var presenter: CityListInteractorOutputProtocol?
+  
+  init() {
+    
+  }
+  
+}

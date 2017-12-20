@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+protocol CityListPresenterProtocol: class {
+  
+}
+
+
+protocol CityListInteractorOutputProtocol: class {
+  
+}
+
+
+class CityListPresenter: CityListPresenterProtocol {
+  weak var view: CityListViewProtocol?
+}
+
+
+extension CityListPresenter: CityListInteractorOutputProtocol {
+  
+}

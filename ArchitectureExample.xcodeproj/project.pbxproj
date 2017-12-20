@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		47B2452B9F05A89B19592775 /* Pods_ArchitectureExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2036C0B63A60F8C10ED76A72 /* Pods_ArchitectureExample.framework */; };
 		58A1EC95BD6FAD34109EF110 /* Pods_ArchitectureExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5390770A943E84D596654C /* Pods_ArchitectureExampleTests.framework */; };
+		BD7093B41FEA2BBB0037EB71 /* StoreListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7093B31FEA2BBB0037EB71 /* StoreListViewController.storyboard */; };
+		BD7093B61FEA2BC90037EB71 /* StoreListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7093B51FEA2BC90037EB71 /* StoreListWireframe.swift */; };
+		BD7093B81FEA2BD90037EB71 /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7093B71FEA2BD90037EB71 /* StoreListViewController.swift */; };
+		BD7093BA1FEA2BE40037EB71 /* StoreListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7093B91FEA2BE40037EB71 /* StoreListPresenter.swift */; };
+		BD7093BC1FEA2BED0037EB71 /* StoreListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7093BB1FEA2BED0037EB71 /* StoreListInteractor.swift */; };
+		BD7093BE1FEA2C9B0037EB71 /* StoreDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7093BD1FEA2C9B0037EB71 /* StoreDetailWireframe.swift */; };
+		BD7093C01FEA2CA30037EB71 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7093BF1FEA2CA30037EB71 /* StoreDetailViewController.swift */; };
+		BD7093C21FEA2CA90037EB71 /* StoreDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7093C11FEA2CA90037EB71 /* StoreDetailPresenter.swift */; };
+		BD7093C41FEA2CAF0037EB71 /* StoreDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7093C31FEA2CAF0037EB71 /* StoreDetailInteractor.swift */; };
+		BD7093C61FEA2CB80037EB71 /* StoreDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7093C51FEA2CB80037EB71 /* StoreDetailViewController.storyboard */; };
 		BD9432D01FE8ACC400C0D6F3 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432CF1FE8ACC400C0D6F3 /* ServiceResult.swift */; };
 		BD9432D21FE8AEC300C0D6F3 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432D11FE8AEC300C0D6F3 /* RootWireframe.swift */; };
 		BD9432D51FE8B1CB00C0D6F3 /* AppDelegatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432D41FE8B1CB00C0D6F3 /* AppDelegatePresenter.swift */; };
@@ -45,6 +55,16 @@
 		87C709B8A4894B51DDC36044 /* Pods-ArchitectureExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureExample/Pods-ArchitectureExample.release.xcconfig"; sourceTree = "<group>"; };
 		98AC445571C229C163DC2CAC /* Pods-ArchitectureExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureExampleTests/Pods-ArchitectureExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A341695B2AE385D4546CD486 /* Pods-ArchitectureExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureExample/Pods-ArchitectureExample.debug.xcconfig"; sourceTree = "<group>"; };
+		BD7093B31FEA2BBB0037EB71 /* StoreListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreListViewController.storyboard; sourceTree = "<group>"; };
+		BD7093B51FEA2BC90037EB71 /* StoreListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListWireframe.swift; sourceTree = "<group>"; };
+		BD7093B71FEA2BD90037EB71 /* StoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListViewController.swift; sourceTree = "<group>"; };
+		BD7093B91FEA2BE40037EB71 /* StoreListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListPresenter.swift; sourceTree = "<group>"; };
+		BD7093BB1FEA2BED0037EB71 /* StoreListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListInteractor.swift; sourceTree = "<group>"; };
+		BD7093BD1FEA2C9B0037EB71 /* StoreDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailWireframe.swift; sourceTree = "<group>"; };
+		BD7093BF1FEA2CA30037EB71 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
+		BD7093C11FEA2CA90037EB71 /* StoreDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailPresenter.swift; sourceTree = "<group>"; };
+		BD7093C31FEA2CAF0037EB71 /* StoreDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailInteractor.swift; sourceTree = "<group>"; };
+		BD7093C51FEA2CB80037EB71 /* StoreDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreDetailViewController.storyboard; sourceTree = "<group>"; };
 		BD9432CF1FE8ACC400C0D6F3 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
 		BD9432D11FE8AEC300C0D6F3 /* RootWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		BD9432D41FE8B1CB00C0D6F3 /* AppDelegatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegatePresenter.swift; sourceTree = "<group>"; };
@@ -219,8 +239,8 @@
 		BDE05DDB1FE789460060BE1A /* CityList */ = {
 			isa = PBXGroup;
 			children = (
-				BD9432DC1FE8B6D600C0D6F3 /* CityListWireframe.swift */,
 				BD9432E61FE8DBEB00C0D6F3 /* CityListViewController.storyboard */,
+				BD9432DC1FE8B6D600C0D6F3 /* CityListWireframe.swift */,
 				BD9432DE1FE8DB5A00C0D6F3 /* CityListViewController.swift */,
 				BD9432E01FE8DB6D00C0D6F3 /* CityListPresenter.swift */,
 				BD9432E21FE8DB7700C0D6F3 /* CityListInteractor.swift */,
@@ -231,6 +251,11 @@
 		BDE05DDC1FE7895D0060BE1A /* StoreList */ = {
 			isa = PBXGroup;
 			children = (
+				BD7093B31FEA2BBB0037EB71 /* StoreListViewController.storyboard */,
+				BD7093B51FEA2BC90037EB71 /* StoreListWireframe.swift */,
+				BD7093B71FEA2BD90037EB71 /* StoreListViewController.swift */,
+				BD7093B91FEA2BE40037EB71 /* StoreListPresenter.swift */,
+				BD7093BB1FEA2BED0037EB71 /* StoreListInteractor.swift */,
 			);
 			path = StoreList;
 			sourceTree = "<group>";
@@ -238,6 +263,11 @@
 		BDE05DDD1FE789640060BE1A /* StoreDetail */ = {
 			isa = PBXGroup;
 			children = (
+				BD7093C51FEA2CB80037EB71 /* StoreDetailViewController.storyboard */,
+				BD7093BD1FEA2C9B0037EB71 /* StoreDetailWireframe.swift */,
+				BD7093BF1FEA2CA30037EB71 /* StoreDetailViewController.swift */,
+				BD7093C11FEA2CA90037EB71 /* StoreDetailPresenter.swift */,
+				BD7093C31FEA2CAF0037EB71 /* StoreDetailInteractor.swift */,
 			);
 			path = StoreDetail;
 			sourceTree = "<group>";
@@ -339,7 +369,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9432E71FE8DBEB00C0D6F3 /* CityListViewController.storyboard in Resources */,
+				BD7093B41FEA2BBB0037EB71 /* StoreListViewController.storyboard in Resources */,
 				BDE05D921FE781CA0060BE1A /* LaunchScreen.storyboard in Resources */,
+				BD7093C61FEA2CB80037EB71 /* StoreDetailViewController.storyboard in Resources */,
 				BDE05D8F1FE781CA0060BE1A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,12 +495,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9432D01FE8ACC400C0D6F3 /* ServiceResult.swift in Sources */,
+				BD7093BC1FEA2BED0037EB71 /* StoreListInteractor.swift in Sources */,
+				BD7093B81FEA2BD90037EB71 /* StoreListViewController.swift in Sources */,
 				BD9432D21FE8AEC300C0D6F3 /* RootWireframe.swift in Sources */,
 				BD9432DB1FE8B49700C0D6F3 /* AppDelegateView.swift in Sources */,
+				BD7093C21FEA2CA90037EB71 /* StoreDetailPresenter.swift in Sources */,
+				BD7093BA1FEA2BE40037EB71 /* StoreListPresenter.swift in Sources */,
 				BD9432D91FE8B41200C0D6F3 /* AppDelegateInteractor.swift in Sources */,
+				BD7093C01FEA2CA30037EB71 /* StoreDetailViewController.swift in Sources */,
+				BD7093C41FEA2CAF0037EB71 /* StoreDetailInteractor.swift in Sources */,
+				BD7093B61FEA2BC90037EB71 /* StoreListWireframe.swift in Sources */,
 				BD9432D71FE8B29600C0D6F3 /* AppDelegateWireframe.swift in Sources */,
 				BDE05D881FE781CA0060BE1A /* AppDelegate.swift in Sources */,
 				BDE05DE31FE789BD0060BE1A /* CityService.swift in Sources */,
+				BD7093BE1FEA2C9B0037EB71 /* StoreDetailWireframe.swift in Sources */,
 				BD9432DD1FE8B6D600C0D6F3 /* CityListWireframe.swift in Sources */,
 				BD9432E31FE8DB7700C0D6F3 /* CityListInteractor.swift in Sources */,
 				BD9432D51FE8B1CB00C0D6F3 /* AppDelegatePresenter.swift in Sources */,

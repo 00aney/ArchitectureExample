@@ -8,6 +8,12 @@
 
 import UIKit
 
+
+protocol CityListViewProtocol: class {
+  
+}
+
+
 final class CityListViewController: UIViewController {
   
   
@@ -16,5 +22,10 @@ final class CityListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   }
+  
+}
+
+
+extension CityListViewController: CityListViewProtocol {
   
 }
