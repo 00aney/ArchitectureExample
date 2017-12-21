@@ -11,14 +11,29 @@ import Foundation
 
 protocol CityListInteractorInputProtocol: class {
   
+  func fetchCities()
+  
 }
 
 
-class CityListInteractor: CityListInteractorInputProtocol {
+class CityListInteractor {
+  
+  // MARK: Properties
+  
   weak var presenter: CityListInteractorOutputProtocol?
   
   init() {
     
+  }
+  
+}
+
+extension CityListInteractor: CityListInteractorInputProtocol {
+  
+  func fetchCities() {
+    print("fetchCities")
+    
+    presenter?.citiesFetched()
   }
   
 }

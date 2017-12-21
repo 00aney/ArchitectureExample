@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol AppDelegateWireframeProtocol: class {
-  func presentAppDelegateModule(fromView caller: AnyObject)
+  func presentAppDelegateModule(from caller: AnyObject)
   
   /**
    * Add here your methods for communication PRESENTER -> WIREFRAME
@@ -29,11 +29,11 @@ class AppDelegateWireframe: AppDelegateWireframeProtocol {
   var cityListWireframe: CityListWireframe?
   
   
-  func presentAppDelegateModule(fromView caller: AnyObject) {
+  func presentAppDelegateModule(from caller: AnyObject) {
   }
   
   func presentCityListModule() {
-    cityListWireframe?.presentCityListModule(fromView: self)
+    cityListWireframe?.presentCityListModule(from: self)
   }
   
   func presentStoreListModule() {

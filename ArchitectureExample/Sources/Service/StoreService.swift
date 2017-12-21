@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+import Alamofire
+
+
+protocol StoreServiceType {
+  
+}
+
+
+final class StoreService: StoreServiceType {
+  
+}

@@ -8,21 +8,46 @@
 
 import Foundation
 
+
 protocol CityListPresenterProtocol: class {
-  
+  func viewDidLoad()
 }
 
 
 protocol CityListInteractorOutputProtocol: class {
+  func citiesFetched()
+}
+
+
+final class CityListPresenter {
+  
+  // MARK: Properties
+  
+  weak var view: CityListViewProtocol?
+  var wireframe: CityListWireframeProtocol?
+  var interactor: CityListInteractorInputProtocol?
   
 }
 
 
-class CityListPresenter: CityListPresenterProtocol {
-  weak var view: CityListViewProtocol?
+// MARK: - CityListPresenterProtocol
+
+extension CityListPresenter: CityListPresenterProtocol {
+  
+  func viewDidLoad() {
+    view?.showLoadingScreen()
+    interactor?.fetchCities()
+  }
+  
 }
 
 
+// MARK: - CityListInteractorOutputProtocol
+
 extension CityListPresenter: CityListInteractorOutputProtocol {
+  
+  func citiesFetched() {
+    view?.show()
+  }
   
 }
