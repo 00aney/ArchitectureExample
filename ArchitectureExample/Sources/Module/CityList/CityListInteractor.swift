@@ -21,9 +21,10 @@ class CityListInteractor {
   // MARK: Properties
   
   weak var presenter: CityListInteractorOutputProtocol?
+  var cityService: CityServiceType?
   
-  init() {
-    
+  init(cityService: CityServiceType) {
+    self.cityService = cityService
   }
   
 }
@@ -31,9 +32,16 @@ class CityListInteractor {
 extension CityListInteractor: CityListInteractorInputProtocol {
   
   func fetchCities() {
-    print("fetchCities")
-    
-    presenter?.citiesFetched()
+    cityService?.cities { [weak self] result in
+      guard let `self` = self else { return }
+      switch result {
+      case .success(let cities):
+        print(cities)
+        self.presenter?.citiesFetched()
+      case .failure(let error):
+        print(error)
+      }
+    }
   }
   
 }

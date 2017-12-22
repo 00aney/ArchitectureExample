@@ -27,8 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let rootWireframe = RootWireframe()
     rootWireframe.window = window
     
+    let cityService = CityService()
+    
     // CityList wireframe
-    let cityListWireframe = CityListWireframe()
+    let cityListWireframe = CityListWireframe.createMudule(cityService: cityService)
     cityListWireframe.rootWireframe = rootWireframe
     
     // StoreList wireframe
