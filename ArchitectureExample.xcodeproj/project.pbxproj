@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		47B2452B9F05A89B19592775 /* Pods_ArchitectureExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2036C0B63A60F8C10ED76A72 /* Pods_ArchitectureExample.framework */; };
 		58A1EC95BD6FAD34109EF110 /* Pods_ArchitectureExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5390770A943E84D596654C /* Pods_ArchitectureExampleTests.framework */; };
+		BD688A451FF2396400E46B7A /* CityListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD688A431FF2396400E46B7A /* CityListCell.swift */; };
+		BD688A461FF2396400E46B7A /* CityListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD688A441FF2396400E46B7A /* CityListCell.xib */; };
 		BD7093B41FEA2BBB0037EB71 /* StoreListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7093B31FEA2BBB0037EB71 /* StoreListViewController.storyboard */; };
 		BD7093B61FEA2BC90037EB71 /* StoreListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7093B51FEA2BC90037EB71 /* StoreListWireframe.swift */; };
 		BD7093B81FEA2BD90037EB71 /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7093B71FEA2BD90037EB71 /* StoreListViewController.swift */; };
@@ -56,6 +58,8 @@
 		87C709B8A4894B51DDC36044 /* Pods-ArchitectureExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureExample/Pods-ArchitectureExample.release.xcconfig"; sourceTree = "<group>"; };
 		98AC445571C229C163DC2CAC /* Pods-ArchitectureExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureExampleTests/Pods-ArchitectureExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A341695B2AE385D4546CD486 /* Pods-ArchitectureExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitectureExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitectureExample/Pods-ArchitectureExample.debug.xcconfig"; sourceTree = "<group>"; };
+		BD688A431FF2396400E46B7A /* CityListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListCell.swift; sourceTree = "<group>"; };
+		BD688A441FF2396400E46B7A /* CityListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityListCell.xib; sourceTree = "<group>"; };
 		BD7093B31FEA2BBB0037EB71 /* StoreListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreListViewController.storyboard; sourceTree = "<group>"; };
 		BD7093B51FEA2BC90037EB71 /* StoreListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListWireframe.swift; sourceTree = "<group>"; };
 		BD7093B71FEA2BD90037EB71 /* StoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 		BDE05DDB1FE789460060BE1A /* CityList */ = {
 			isa = PBXGroup;
 			children = (
+				BD688A431FF2396400E46B7A /* CityListCell.swift */,
+				BD688A441FF2396400E46B7A /* CityListCell.xib */,
 				BD9432E61FE8DBEB00C0D6F3 /* CityListViewController.storyboard */,
 				BD9432DC1FE8B6D600C0D6F3 /* CityListWireframe.swift */,
 				BD9432DE1FE8DB5A00C0D6F3 /* CityListViewController.swift */,
@@ -371,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD688A461FF2396400E46B7A /* CityListCell.xib in Resources */,
 				BD9432E71FE8DBEB00C0D6F3 /* CityListViewController.storyboard in Resources */,
 				BD7093B41FEA2BBB0037EB71 /* StoreListViewController.storyboard in Resources */,
 				BDE05D921FE781CA0060BE1A /* LaunchScreen.storyboard in Resources */,
@@ -518,6 +525,7 @@
 				BD79A10C1FECD28900B6337D /* City.swift in Sources */,
 				BDE05DE01FE789B10060BE1A /* StoreService.swift in Sources */,
 				BD9432DF1FE8DB5A00C0D6F3 /* CityListViewController.swift in Sources */,
+				BD688A451FF2396400E46B7A /* CityListCell.swift in Sources */,
 				BD9432E11FE8DB6D00C0D6F3 /* CityListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -37,7 +37,7 @@ extension CityListInteractor: CityListInteractorInputProtocol {
       switch result {
       case .success(let cities):
         print(cities)
-        self.presenter?.citiesFetched()
+        self.presenter?.citiesFetched(cities: cities)
       case .failure(let error):
         print(error)
       }

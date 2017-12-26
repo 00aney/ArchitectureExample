@@ -27,10 +27,12 @@ final class CityListViewController: UIViewController {
   var presenter: CityListPresenterProtocol?
   var state: CityListViewState = .initial
   
+  
   // MARK: UI
   
   @IBOutlet weak var tableView: UITableView!
   var loadingView: UIView!
+  
   
   // MARK: View Life Cycle
   
@@ -48,13 +50,15 @@ final class CityListViewController: UIViewController {
     loadingView = UIView()
     loadingView.translatesAutoresizingMaskIntoConstraints = false
     loadingView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+    
+    tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
   }
   
   private func setupBinding() {
     tableView.delegate = self
     tableView.dataSource = self
     
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    tableView.register(UINib(nibName: "CityListCell", bundle: nil), forCellReuseIdentifier: "CityListCell")
     tableView.tableFooterView = UIView()
   }
   
@@ -80,6 +84,7 @@ final class CityListViewController: UIViewController {
   
   private func removeLoadingView() {
     loadingView.removeFromSuperview()
+    tableView.reloadData()
   }
   
 }
@@ -102,7 +107,7 @@ extension CityListViewController: CityListViewProtocol {
   func show() {
     state = .loaded
     
-//    removeLoadingView()
+    removeLoadingView()
   }
   
 }
@@ -113,7 +118,11 @@ extension CityListViewController: CityListViewProtocol {
 extension CityListViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print("didSelectRowAt \(indexPath.row)")
+    presenter?.didSelectRowAt(indexPath: indexPath)
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return (view.bounds.height - 20) / 5
   }
   
 }
@@ -124,11 +133,14 @@ extension CityListViewController: UITableViewDelegate {
 extension CityListViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
+    return presenter?.numberOfRowsInSection(in: section) ?? 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "CityListCell", for: indexPath) as! CityListCell
+    
+    presenter?.configureCell(cell, for: indexPath)
+    
     return cell
   }
   

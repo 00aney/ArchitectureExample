@@ -11,11 +11,16 @@ import Foundation
 
 protocol CityListPresenterProtocol: class {
   func viewDidLoad()
+  
+  func numberOfRowsInSection(in section: Int) -> Int
+  func configureCell(_ cell: CityListCell, for indexPath: IndexPath)
+  
+  func didSelectRowAt(indexPath: IndexPath)
 }
 
 
 protocol CityListInteractorOutputProtocol: class {
-  func citiesFetched()
+  func citiesFetched(cities: [City])
 }
 
 
@@ -26,6 +31,8 @@ final class CityListPresenter {
   weak var view: CityListViewProtocol?
   var wireframe: CityListWireframeProtocol?
   var interactor: CityListInteractorInputProtocol?
+  
+  var cities: [City]?
   
 }
 
@@ -39,6 +46,20 @@ extension CityListPresenter: CityListPresenterProtocol {
     interactor?.fetchCities()
   }
   
+  func numberOfRowsInSection(in section: Int) -> Int {
+    return cities?.count ?? 0
+  }
+  
+  func configureCell(_ cell: CityListCell, for indexPath: IndexPath) {
+    guard let cities = cities else { return }
+    cell.configure(cities[indexPath.row])
+  }
+  
+  func didSelectRowAt(indexPath: IndexPath) {
+    guard let cities = cities else { return }
+    print(cities[indexPath.row])
+  }
+  
 }
 
 
@@ -46,7 +67,8 @@ extension CityListPresenter: CityListPresenterProtocol {
 
 extension CityListPresenter: CityListInteractorOutputProtocol {
   
-  func citiesFetched() {
+  func citiesFetched(cities: [City]) {
+    self.cities = cities
     view?.show()
   }
   
