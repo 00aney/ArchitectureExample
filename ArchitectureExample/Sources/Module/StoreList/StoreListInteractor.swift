@@ -14,11 +14,22 @@ protocol StoreListInteractorInputProtocol: class {
 }
 
 
-class StoreListInteractor: StoreListInteractorInputProtocol {
-  weak var presenter: StoreListInteractorOutputProtocol?
+class StoreListInteractor {
   
-  init() {
-    
+  // MARK: Properties
+  
+  weak var presenter: StoreListInteractorOutputProtocol?
+  var storeService: StoreServiceType?
+  
+  init(storeService: StoreServiceType) {
+    self.storeService = storeService
   }
+  
+}
+
+
+// MARK: - StoreListInteractorInputProtocol
+
+extension StoreListInteractor: StoreListInteractorInputProtocol {
   
 }

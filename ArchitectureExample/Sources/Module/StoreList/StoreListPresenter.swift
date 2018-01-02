@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol StoreListPresenterProtocol: class {
-  
+  func viewDidLoad()
 }
 
 
@@ -19,10 +19,27 @@ protocol StoreListInteractorOutputProtocol: class {
 }
 
 
-class StoreListPresenter: StoreListPresenterProtocol {
+final class StoreListPresenter {
+  
+  // MARK: Properties
+  
   weak var view: StoreListViewProtocol?
+  var wireframe: StoreListWireframeProtocol?
+  var interactor: StoreListInteractorInputProtocol?
+  
 }
 
+
+// MARK: - StoreListPresenterProtocol
+
+extension StoreListPresenter: StoreListPresenterProtocol {
+  func viewDidLoad() {
+    print("viewDidLoad")
+  }
+}
+
+
+// MARK: - StoreListInteractorOutputProtocol
 
 extension StoreListPresenter: StoreListInteractorOutputProtocol {
   

@@ -27,7 +27,7 @@ class AppDelegateWireframe: AppDelegateWireframeProtocol {
   
   // TODO: Other wire frame
   var cityListWireframe: CityListWireframe?
-  
+  var storeListWireframe: StoreListWireframe?
   
   func presentAppDelegateModule(from caller: AnyObject) {
   }
@@ -37,7 +37,7 @@ class AppDelegateWireframe: AppDelegateWireframeProtocol {
   }
   
   func presentStoreListModule() {
-    
+    storeListWireframe?.presentStoreListModule(from: self)
   }
   
   func presentTabBarModule() {

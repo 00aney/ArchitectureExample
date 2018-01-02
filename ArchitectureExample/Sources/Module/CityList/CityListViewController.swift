@@ -14,11 +14,13 @@ protocol CityListViewProtocol: class {
   func show()
 }
 
+
 enum CityListViewState {
   case initial
   case loading
   case loaded
 }
+
 
 final class CityListViewController: UIViewController {
   
@@ -38,7 +40,6 @@ final class CityListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     setupUI()
     setupBinding()
     
@@ -51,7 +52,7 @@ final class CityListViewController: UIViewController {
     loadingView.translatesAutoresizingMaskIntoConstraints = false
     loadingView.backgroundColor = UIColor(white: 0, alpha: 0.5)
     
-    tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+//    tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
   }
   
   private func setupBinding() {

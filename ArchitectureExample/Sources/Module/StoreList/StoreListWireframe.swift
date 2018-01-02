@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol StoreListWireframeProtocol: class {
-  func presentStoreListModule(fromView caller: AnyObject)
+  func presentStoreListModule(from caller: AnyObject)
   
   /**
    * Add here your methods for communication PRESENTER -> WIREFRAME
@@ -22,10 +22,55 @@ class StoreListWireframe: StoreListWireframeProtocol {
   
   var rootWireframe: RootWireframe?
   
-  func presentStoreListModule(fromView caller: AnyObject) {
-    guard let viewController = UIStoryboard(name: "StoreListViewController", bundle: nil).instantiateInitialViewController() as? StoreListViewController else { return }
+  weak var storeListViewController: UIViewController?
+  
+//  var storeService: StoreService?
+  
+  static func createMudule(storeService: StoreServiceType = StoreService()) -> StoreListWireframe {
+    guard let view = UIStoryboard(name: "StoreListViewController", bundle: nil).instantiateViewController(withIdentifier: "StoreListViewController") as? StoreListViewController
+      else {
+        fatalError("Failed to initialize ViewController")
+    }
     
-    rootWireframe?.transitionToViewController(viewController: viewController)
+    let wireframe = StoreListWireframe()
+    let presenter = StoreListPresenter()
+    let interactor = StoreListInteractor(storeService: storeService)
+    
+    view.presenter = presenter
+    presenter.view = view
+    presenter.wireframe = wireframe
+    presenter.interactor = interactor
+    interactor.presenter = presenter
+    
+    wireframe.storeListViewController = view
+    
+    return wireframe
+  }
+  
+  func presentStoreListModule(from caller: AnyObject) {
+//    guard let storeService = storeService else { return }
+    let storeService = StoreService()
+    
+    // Generating module components
+    guard let view = UIStoryboard(name: "StoreListViewController", bundle: nil).instantiateViewController(withIdentifier: "StoreListViewController") as? StoreListViewController else {
+      return
+    }
+    
+    storeListViewController = view
+    
+    let presenter = StoreListPresenter()
+    let interactor = StoreListInteractor(storeService: storeService)
+    
+    // Connecting
+    view.presenter = presenter
+    presenter.view = view
+    presenter.wireframe = self
+    presenter.interactor = interactor
+    interactor.presenter = presenter
+    
+    if let navigationController = caller as? UINavigationController {
+      navigationController.pushViewController(view, animated: true)
+    }
   }
   
 }

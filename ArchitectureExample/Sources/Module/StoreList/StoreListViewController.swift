@@ -16,13 +16,27 @@ protocol StoreListViewProtocol: class {
 
 final class StoreListViewController: UIViewController {
   
+  var presenter: StoreListPresenterProtocol?
+  
   
   // MARK: View Life Cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    setupUI()
+    setupBinding()
+    
+    presenter?.viewDidLoad()
   }
   
+  private func setupUI() {
+    print("setupUI")
+  }
+  
+  private func setupBinding() {
+    print("setupBinding")
+  }
 }
 
 

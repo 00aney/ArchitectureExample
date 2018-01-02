@@ -58,6 +58,7 @@ extension CityListPresenter: CityListPresenterProtocol {
   func didSelectRowAt(indexPath: IndexPath) {
     guard let cities = cities else { return }
     print(cities[indexPath.row])
+    wireframe?.presentStoreListModule()
   }
   
 }

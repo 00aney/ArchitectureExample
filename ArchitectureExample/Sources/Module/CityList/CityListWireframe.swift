@@ -11,7 +11,7 @@ import UIKit
 
 protocol CityListWireframeProtocol: class {
   func presentCityListModule(from caller: AnyObject)
-  
+  func presentStoreListModule()
   /**
    * Add here your methods for communication PRESENTER -> WIREFRAME
    */
@@ -23,7 +23,7 @@ class CityListWireframe: CityListWireframeProtocol {
   var rootWireframe: RootWireframe?
   var storeListWireframe: StoreListWireframe?
   
-  weak var cityListViewController: UIViewController!
+  weak var cityListNavigationController: UINavigationController?
   
   static func createMudule(cityService: CityServiceType) -> CityListWireframe {
     guard let navigationController = UIStoryboard(name: "CityListViewController", bundle: nil).instantiateInitialViewController() as? UINavigationController
@@ -46,13 +46,20 @@ class CityListWireframe: CityListWireframeProtocol {
     presenter.interactor = interactor
     interactor.presenter = presenter
     
-    wireframe.cityListViewController = view
+    wireframe.cityListNavigationController = navigationController
     
     return wireframe
   }
   
   func presentCityListModule(from caller: AnyObject) {
-    rootWireframe?.transitionToViewController(viewController: cityListViewController)
+    if let navigationController = cityListNavigationController {
+      rootWireframe?.transitionToViewController(viewController: navigationController)
+    }
+  }
+  
+  func presentStoreListModule() {
+    guard let navigationController = cityListNavigationController else { return }
+    storeListWireframe?.presentStoreListModule(from: navigationController)
   }
   
 }

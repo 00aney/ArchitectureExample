@@ -15,3 +15,4 @@ protocol AppDelegateViewProtocol: class {
    * Add here your methods for communication PRESENTER -> VIEW
    */
 }
+

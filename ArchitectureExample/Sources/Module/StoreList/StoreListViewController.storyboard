@@ -12,7 +12,7 @@
         <!--Store List View Controller-->
         <scene sceneID="1Zz-Ev-DPo">
             <objects>
-                <viewController id="QA1-I9-YLU" customClass="StoreListViewController" customModule="ArchitectureExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoreListViewController" id="QA1-I9-YLU" customClass="StoreListViewController" customModule="ArchitectureExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lr6-Vt-aMW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

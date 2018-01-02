@@ -35,7 +35,6 @@ class AppDelegatePresenter: AppDelegatePresenterProtocol {
   var wireframe: AppDelegateWireframeProtocol?
   
   func presentRootViewController() {
-//    wireframe?.presentTabBarModule()
     wireframe?.presentCityListModule()
   }
 
