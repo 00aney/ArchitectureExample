@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol StoreListInteractorInputProtocol: class {
-  
+  func fetchStores()
 }
 
 
@@ -31,5 +31,9 @@ class StoreListInteractor {
 // MARK: - StoreListInteractorInputProtocol
 
 extension StoreListInteractor: StoreListInteractorInputProtocol {
+  
+  func fetchStores() {
+    print("DDDD")
+  }
   
 }

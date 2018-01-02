@@ -13,9 +13,15 @@ import Alamofire
 
 protocol StoreServiceType {
   
+  
+  func storesNearBy(lat: Double, lon: Double, completion: @escaping ((ServiceResult<Store>)->Void))
 }
 
 
 final class StoreService: StoreServiceType {
+  
+  func storesNearBy(lat: Double, lon: Double, completion: @escaping ((ServiceResult<Store>)->Void)) {
+    // TODO: alamofire
+  }
   
 }

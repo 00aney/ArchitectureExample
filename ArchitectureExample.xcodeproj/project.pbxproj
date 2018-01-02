@@ -22,6 +22,7 @@
 		BD7093C41FEA2CAF0037EB71 /* StoreDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7093C31FEA2CAF0037EB71 /* StoreDetailInteractor.swift */; };
 		BD7093C61FEA2CB80037EB71 /* StoreDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7093C51FEA2CB80037EB71 /* StoreDetailViewController.storyboard */; };
 		BD79A10C1FECD28900B6337D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD79A10B1FECD28900B6337D /* City.swift */; };
+		BD8E99B61FFB5E2C0009F50F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E99B51FFB5E2C0009F50F /* Store.swift */; };
 		BD9432D01FE8ACC400C0D6F3 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432CF1FE8ACC400C0D6F3 /* ServiceResult.swift */; };
 		BD9432D21FE8AEC300C0D6F3 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432D11FE8AEC300C0D6F3 /* RootWireframe.swift */; };
 		BD9432D51FE8B1CB00C0D6F3 /* AppDelegatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432D41FE8B1CB00C0D6F3 /* AppDelegatePresenter.swift */; };
@@ -71,6 +72,7 @@
 		BD7093C31FEA2CAF0037EB71 /* StoreDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailInteractor.swift; sourceTree = "<group>"; };
 		BD7093C51FEA2CB80037EB71 /* StoreDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoreDetailViewController.storyboard; sourceTree = "<group>"; };
 		BD79A10B1FECD28900B6337D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		BD8E99B51FFB5E2C0009F50F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		BD9432CF1FE8ACC400C0D6F3 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
 		BD9432D11FE8AEC300C0D6F3 /* RootWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		BD9432D41FE8B1CB00C0D6F3 /* AppDelegatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegatePresenter.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				BD79A10B1FECD28900B6337D /* City.swift */,
+				BD8E99B51FFB5E2C0009F50F /* Store.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				BD9432D01FE8ACC400C0D6F3 /* ServiceResult.swift in Sources */,
 				BD7093BC1FEA2BED0037EB71 /* StoreListInteractor.swift in Sources */,
 				BD7093B81FEA2BD90037EB71 /* StoreListViewController.swift in Sources */,
+				BD8E99B61FFB5E2C0009F50F /* Store.swift in Sources */,
 				BD9432D21FE8AEC300C0D6F3 /* RootWireframe.swift in Sources */,
 				BD9432DB1FE8B49700C0D6F3 /* AppDelegateView.swift in Sources */,
 				BD7093C21FEA2CA90037EB71 /* StoreDetailPresenter.swift in Sources */,

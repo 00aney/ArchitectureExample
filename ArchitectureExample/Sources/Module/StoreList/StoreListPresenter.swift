@@ -33,9 +33,12 @@ final class StoreListPresenter {
 // MARK: - StoreListPresenterProtocol
 
 extension StoreListPresenter: StoreListPresenterProtocol {
+  
   func viewDidLoad() {
     print("viewDidLoad")
+    interactor?.fetchStores()
   }
+  
 }
 
 
@@ -44,4 +47,3 @@ extension StoreListPresenter: StoreListPresenterProtocol {
 extension StoreListPresenter: StoreListInteractorOutputProtocol {
   
 }
-

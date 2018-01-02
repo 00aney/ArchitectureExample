@@ -40,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    storeListWireframe.storeService = storeService
     cityListWireframe.storeListWireframe = storeListWireframe
 
-    
     // StoreDetail wireframe
     
     // AppDelegate wireframe
