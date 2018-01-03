@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol StoreListWireframeProtocol: class {
-  func presentStoreListModule(from caller: AnyObject)
+  func presentStoreListModule(from caller: AnyObject, lat: Double, lon: Double)
   
   /**
    * Add here your methods for communication PRESENTER -> WIREFRAME
@@ -47,7 +47,7 @@ class StoreListWireframe: StoreListWireframeProtocol {
     return wireframe
   }
   
-  func presentStoreListModule(from caller: AnyObject) {
+  func presentStoreListModule(from caller: AnyObject, lat: Double, lon: Double) {
 //    guard let storeService = storeService else { return }
     let storeService = StoreService()
     
@@ -65,6 +65,8 @@ class StoreListWireframe: StoreListWireframeProtocol {
     view.presenter = presenter
     presenter.view = view
     presenter.wireframe = self
+    presenter.lat = lat
+    presenter.lon = lon
     presenter.interactor = interactor
     interactor.presenter = presenter
     

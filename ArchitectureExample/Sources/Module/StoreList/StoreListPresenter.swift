@@ -27,6 +27,8 @@ final class StoreListPresenter {
   var wireframe: StoreListWireframeProtocol?
   var interactor: StoreListInteractorInputProtocol?
   
+  var lat: Double?
+  var lon: Double?
 }
 
 
@@ -36,7 +38,7 @@ extension StoreListPresenter: StoreListPresenterProtocol {
   
   func viewDidLoad() {
     print("viewDidLoad")
-    interactor?.fetchStores()
+    interactor?.fetchStores(lat: lat!, lon: lon!)
   }
   
 }

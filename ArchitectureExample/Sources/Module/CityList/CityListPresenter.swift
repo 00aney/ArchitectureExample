@@ -57,8 +57,9 @@ extension CityListPresenter: CityListPresenterProtocol {
   
   func didSelectRowAt(indexPath: IndexPath) {
     guard let cities = cities else { return }
-    print(cities[indexPath.row])
-    wireframe?.presentStoreListModule()
+    let lat = cities[indexPath.row].location.coordinate.latitude
+    let lon = cities[indexPath.row].location.coordinate.longitude
+    wireframe?.presentStoreListModule(lat: lat, lon: lon)
   }
   
 }

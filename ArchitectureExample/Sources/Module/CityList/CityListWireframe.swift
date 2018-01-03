@@ -11,7 +11,7 @@ import UIKit
 
 protocol CityListWireframeProtocol: class {
   func presentCityListModule(from caller: AnyObject)
-  func presentStoreListModule()
+  func presentStoreListModule(lat: Double, lon: Double)
   /**
    * Add here your methods for communication PRESENTER -> WIREFRAME
    */
@@ -57,9 +57,9 @@ class CityListWireframe: CityListWireframeProtocol {
     }
   }
   
-  func presentStoreListModule() {
+  func presentStoreListModule(lat: Double, lon: Double) {
     guard let navigationController = cityListNavigationController else { return }
-    storeListWireframe?.presentStoreListModule(from: navigationController)
+    storeListWireframe?.presentStoreListModule(from: navigationController, lat: lat, lon: lon)
   }
   
 }

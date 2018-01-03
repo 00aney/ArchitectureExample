@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol StoreListInteractorInputProtocol: class {
-  func fetchStores()
+  func fetchStores(lat: Double, lon: Double)
 }
 
 
@@ -32,8 +32,10 @@ class StoreListInteractor {
 
 extension StoreListInteractor: StoreListInteractorInputProtocol {
   
-  func fetchStores() {
-    print("DDDD")
+  func fetchStores(lat: Double, lon: Double) {
+    storeService?.storesNearBy(lat: lat, lon: lon) { result in
+      print(result)
+    }
   }
   
 }
