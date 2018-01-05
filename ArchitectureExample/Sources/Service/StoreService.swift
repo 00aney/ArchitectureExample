@@ -12,7 +12,7 @@ import Alamofire
 
 
 protocol StoreServiceType {
-  func storesNearBy(lat: Double, lon: Double, completion: @escaping ((ServiceResult<Store>)->Void))
+  func storesNearBy(lat: Double, lon: Double, completion: @escaping ((ServiceResult<PagedStore.Store>)->Void))
 }
 
 
@@ -20,7 +20,7 @@ final class StoreService: StoreServiceType {
   
   static let APIKey = "MDo3MmI5NDU1OC1lMmRkLTExZTctYWQ0Ni1jYjgxMWM4NzczMzc6UXBiNlZTVGlxQjREdmdhYVFhRkE5OEk3ZDZFckxBcGt0YU9O"
   
-  func storesNearBy(lat: Double, lon: Double, completion: @escaping ((ServiceResult<Store>)->Void)) {
+  func storesNearBy(lat: Double, lon: Double, completion: @escaping ((ServiceResult<PagedStore.Store>)->Void)) {
     var urlRequest: URLRequest
     urlRequest = URLRequest(url: URL(string: "https://lcboapi.com/stores")!)
     urlRequest.addValue("Token \(StoreService.APIKey)", forHTTPHeaderField: "Authorization")
@@ -35,7 +35,10 @@ final class StoreService: StoreServiceType {
       .responseData { response in
         switch response.result {
         case .success(let data):
+          let result = try! JSONDecoder().decode(PagedStore.self, from: data)
+          print(result)
           
+//          JSONDecoder.decode(<#T##JSONDecoder#>)
         case .failure(let error):
           print(error)
         }
