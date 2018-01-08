@@ -48,7 +48,6 @@ class StoreListWireframe: StoreListWireframeProtocol {
   }
   
   func presentStoreListModule(from caller: AnyObject, lat: Double, lon: Double) {
-//    guard let storeService = storeService else { return }
     let storeService = StoreService()
     
     // Generating module components

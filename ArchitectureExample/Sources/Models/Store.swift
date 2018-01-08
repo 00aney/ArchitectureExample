@@ -8,6 +8,7 @@
 
 import Foundation
 
+typealias Store = PagedStore.Store
 
 struct PagedStore: Codable {
   
@@ -16,8 +17,8 @@ struct PagedStore: Codable {
     let currentPage: Int
     let isFirstPage: Bool
     let isFinalPage: Bool
-    let nextPage: Int
-    let nextURL: String
+    let nextPage: Int?
+    let nextURL: String?
     let totalPage: Int
     
     enum CodingKeys: String, CodingKey {

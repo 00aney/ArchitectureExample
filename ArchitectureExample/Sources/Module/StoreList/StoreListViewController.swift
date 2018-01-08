@@ -10,13 +10,17 @@ import UIKit
 
 
 protocol StoreListViewProtocol: class {
-  
+  func show()
 }
 
 
 final class StoreListViewController: UIViewController {
   
+  // MARK: Properties
+  
   var presenter: StoreListPresenterProtocol?
+  
+  @IBOutlet weak var tableView: UITableView!
   
   
   // MARK: View Life Cycle
@@ -35,12 +39,37 @@ final class StoreListViewController: UIViewController {
   }
   
   private func setupBinding() {
-    print("setupBinding")
+    tableView.delegate = self
+    tableView.dataSource = self
   }
+  
 }
 
 
 extension StoreListViewController: StoreListViewProtocol {
-  
+  func show() {
+    tableView.reloadData()
+  }
 }
 
+
+extension StoreListViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return presenter?.numberOfRows(in: section) ?? 0
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    
+    cell.backgroundColor = .green
+    
+    return cell
+  }
+}
+
+
+extension StoreListViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print(indexPath)
+  }
+}

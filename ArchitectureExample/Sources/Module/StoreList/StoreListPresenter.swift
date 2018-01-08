@@ -8,14 +8,15 @@
 
 import Foundation
 
-
 protocol StoreListPresenterProtocol: class {
   func viewDidLoad()
+  
+  func numberOfRows(in section: Int) -> Int
 }
 
 
 protocol StoreListInteractorOutputProtocol: class {
-  
+  func storesFetched(stores: [Store])
 }
 
 
@@ -29,6 +30,8 @@ final class StoreListPresenter {
   
   var lat: Double?
   var lon: Double?
+  
+  var stores = [Store]()
 }
 
 
@@ -41,11 +44,20 @@ extension StoreListPresenter: StoreListPresenterProtocol {
     interactor?.fetchStores(lat: lat!, lon: lon!)
   }
   
+  func numberOfRows(in section: Int) -> Int {
+    return stores.count
+  }
+  
 }
 
 
 // MARK: - StoreListInteractorOutputProtocol
 
 extension StoreListPresenter: StoreListInteractorOutputProtocol {
+  
+  func storesFetched(stores: [Store]) {
+    self.stores.append(contentsOf: stores)
+    view?.show()
+  }
   
 }

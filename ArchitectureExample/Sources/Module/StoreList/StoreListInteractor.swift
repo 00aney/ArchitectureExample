@@ -20,6 +20,7 @@ class StoreListInteractor {
   
   weak var presenter: StoreListInteractorOutputProtocol?
   var storeService: StoreServiceType?
+  var nextURL: URL? = nil
   
   init(storeService: StoreServiceType) {
     self.storeService = storeService
@@ -33,8 +34,16 @@ class StoreListInteractor {
 extension StoreListInteractor: StoreListInteractorInputProtocol {
   
   func fetchStores(lat: Double, lon: Double) {
-    storeService?.storesNearBy(lat: lat, lon: lon) { result in
-      print(result)
+    storeService?.storesNearBy(lat: lat, lon: lon, pagingURL: nextURL) { [weak self] result in
+      guard let `self` = self else { return }
+
+      switch result {
+      case .success(let list):
+        self.nextURL = list.nextURL
+        self.presenter?.storesFetched(stores: list.items)
+      case .failure(let error):
+        print(error)
+      }
     }
   }
   

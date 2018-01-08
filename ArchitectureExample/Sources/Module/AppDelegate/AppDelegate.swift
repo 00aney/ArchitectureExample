@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     rootWireframe.window = window
     
     let cityService = CityService()
-//    let storeService = StoreService()
     
     // CityList wireframe
     let cityListWireframe = CityListWireframe.createMudule(cityService: cityService)
@@ -37,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // StoreList wireframe
     let storeListWireframe = StoreListWireframe()
     storeListWireframe.rootWireframe = rootWireframe
-//    storeListWireframe.storeService = storeService
     cityListWireframe.storeListWireframe = storeListWireframe
 
     // StoreDetail wireframe
@@ -57,4 +55,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
 }
-
