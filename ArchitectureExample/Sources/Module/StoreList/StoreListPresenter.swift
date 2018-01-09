@@ -12,6 +12,7 @@ protocol StoreListPresenterProtocol: class {
   func viewDidLoad()
   
   func numberOfRows(in section: Int) -> Int
+  func configureCell(_ cell: StoreListCell, indexPath: IndexPath)
 }
 
 
@@ -28,8 +29,7 @@ final class StoreListPresenter {
   var wireframe: StoreListWireframeProtocol?
   var interactor: StoreListInteractorInputProtocol?
   
-  var lat: Double?
-  var lon: Double?
+  var city: City?
   
   var stores = [Store]()
 }
@@ -41,11 +41,16 @@ extension StoreListPresenter: StoreListPresenterProtocol {
   
   func viewDidLoad() {
     print("viewDidLoad")
-    interactor?.fetchStores(lat: lat!, lon: lon!)
+    interactor?.fetchStores(city: city!)
   }
   
   func numberOfRows(in section: Int) -> Int {
     return stores.count
+  }
+  
+  func configureCell(_ cell: StoreListCell, indexPath: IndexPath) {
+    let store = stores[indexPath.row]
+    cell.configure(name: store.name, address: store.address1, phone: store.phone)
   }
   
 }

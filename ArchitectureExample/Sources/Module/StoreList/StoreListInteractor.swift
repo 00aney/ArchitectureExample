@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol StoreListInteractorInputProtocol: class {
-  func fetchStores(lat: Double, lon: Double)
+  func fetchStores(city: City)
 }
 
 
@@ -33,8 +33,8 @@ class StoreListInteractor {
 
 extension StoreListInteractor: StoreListInteractorInputProtocol {
   
-  func fetchStores(lat: Double, lon: Double) {
-    storeService?.storesNearBy(lat: lat, lon: lon, pagingURL: nextURL) { [weak self] result in
+  func fetchStores(city: City) {
+    storeService?.storesNearBy(city: city.name, lat: city.location.coordinate.latitude, lon: city.location.coordinate.longitude, pagingURL: nextURL) { [weak self] result in
       guard let `self` = self else { return }
 
       switch result {

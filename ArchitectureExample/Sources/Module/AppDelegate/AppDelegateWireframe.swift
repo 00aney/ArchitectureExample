@@ -16,7 +16,7 @@ protocol AppDelegateWireframeProtocol: class {
    * Add here your methods for communication PRESENTER -> WIREFRAME
    */
   func presentCityListModule()
-  func presentStoreListModule(lat: Double, lon: Double)
+  func presentStoreListModule(city: City)
   func presentTabBarModule()
 }
 
@@ -36,8 +36,8 @@ class AppDelegateWireframe: AppDelegateWireframeProtocol {
     cityListWireframe?.presentCityListModule(from: self)
   }
   
-  func presentStoreListModule(lat: Double, lon: Double) {
-    storeListWireframe?.presentStoreListModule(from: self, lat: lat, lon: lon)
+  func presentStoreListModule(city: City) {
+    storeListWireframe?.presentStoreListModule(from: self, city: city)
   }
   
   func presentTabBarModule() {

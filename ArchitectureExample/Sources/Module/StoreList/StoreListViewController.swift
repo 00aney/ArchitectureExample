@@ -59,10 +59,9 @@ extension StoreListViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "StoreListCell", for: indexPath) as! StoreListCell
     
-    cell.backgroundColor = .green
-    
+    presenter?.configureCell(cell, indexPath: indexPath)
     return cell
   }
 }

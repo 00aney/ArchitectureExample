@@ -35,6 +35,7 @@
 		BD9432E11FE8DB6D00C0D6F3 /* CityListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432E01FE8DB6D00C0D6F3 /* CityListPresenter.swift */; };
 		BD9432E31FE8DB7700C0D6F3 /* CityListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432E21FE8DB7700C0D6F3 /* CityListInteractor.swift */; };
 		BD9432E71FE8DBEB00C0D6F3 /* CityListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9432E61FE8DBEB00C0D6F3 /* CityListViewController.storyboard */; };
+		BDB5BBA0200496000049AE32 /* StoreListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB5BB9F200496000049AE32 /* StoreListCell.swift */; };
 		BDE05D881FE781CA0060BE1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE05D871FE781CA0060BE1A /* AppDelegate.swift */; };
 		BDE05D8F1FE781CA0060BE1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDE05D8E1FE781CA0060BE1A /* Assets.xcassets */; };
 		BDE05D921FE781CA0060BE1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE05D901FE781CA0060BE1A /* LaunchScreen.storyboard */; };
@@ -86,6 +87,7 @@
 		BD9432E01FE8DB6D00C0D6F3 /* CityListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListPresenter.swift; sourceTree = "<group>"; };
 		BD9432E21FE8DB7700C0D6F3 /* CityListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListInteractor.swift; sourceTree = "<group>"; };
 		BD9432E61FE8DBEB00C0D6F3 /* CityListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityListViewController.storyboard; sourceTree = "<group>"; };
+		BDB5BB9F200496000049AE32 /* StoreListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListCell.swift; sourceTree = "<group>"; };
 		BDE05D841FE781CA0060BE1A /* ArchitectureExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchitectureExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE05D871FE781CA0060BE1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDE05D8E1FE781CA0060BE1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		BDE05DDC1FE7895D0060BE1A /* StoreList */ = {
 			isa = PBXGroup;
 			children = (
+				BDB5BB9F200496000049AE32 /* StoreListCell.swift */,
 				BD7093B31FEA2BBB0037EB71 /* StoreListViewController.storyboard */,
 				BD7093B51FEA2BC90037EB71 /* StoreListWireframe.swift */,
 				BD7093B71FEA2BD90037EB71 /* StoreListViewController.swift */,
@@ -511,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9432D01FE8ACC400C0D6F3 /* ServiceResult.swift in Sources */,
+				BDB5BBA0200496000049AE32 /* StoreListCell.swift in Sources */,
 				BD7093BC1FEA2BED0037EB71 /* StoreListInteractor.swift in Sources */,
 				BD7093B81FEA2BD90037EB71 /* StoreListViewController.swift in Sources */,
 				BD8E99B61FFB5E2C0009F50F /* Store.swift in Sources */,

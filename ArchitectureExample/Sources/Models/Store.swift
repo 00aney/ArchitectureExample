@@ -37,7 +37,8 @@ struct PagedStore: Codable {
     let isDead: Bool
     let name: String
     let address1: String
-    let address2: String
+    let address2: String?
+    let city: String
     let phone: String
     
     enum CodingKeys: String, CodingKey {
@@ -46,6 +47,7 @@ struct PagedStore: Codable {
       case name
       case address1 = "address_line_1"
       case address2 = "address_line_2"
+      case city
       case phone = "telephone"
     }
   }
@@ -74,21 +76,5 @@ extension PagedStore {
     let stores = try container.decode([PagedStore.Store].self, forKey: .stores)
     
     self.init(status: status, message: message ?? "", pager: pager, stores: stores)
-  }
-}
-
-
-extension PagedStore.Store {
-  init(from decoder: Decoder) throws {
-    let container = try decoder.container(keyedBy: CodingKeys.self)
-
-    let id = try container.decode(Int.self, forKey: .id)
-    let isDead = try container.decode(Bool.self, forKey: .isDead)
-    let name = try container.decode(String.self, forKey: .name)
-    let address1 = try container.decode(String.self, forKey: .address1)
-    let address2 = try? container.decode(String.self, forKey: .address2)
-    let phone = try container.decode(String.self, forKey: .phone)
-
-    self.init(id: id, isDead: isDead, name: name, address1: address1, address2: address2 ?? "", phone: phone)
   }
 }

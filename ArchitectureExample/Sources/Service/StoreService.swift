@@ -12,7 +12,7 @@ import Alamofire
 
 
 protocol StoreServiceType {
-  func storesNearBy(lat: Double, lon: Double, pagingURL: URL?, completion: @escaping ((ServiceResult<List<Store>>) -> Void))
+  func storesNearBy(city: String, lat: Double, lon: Double, pagingURL: URL?, completion: @escaping ((ServiceResult<List<Store>>) -> Void))
 }
 
 
@@ -22,7 +22,7 @@ final class StoreService: StoreServiceType {
   
   static let baseURL = "https://lcboapi.com"
   
-  func storesNearBy(lat: Double, lon: Double, pagingURL: URL? = nil, completion: @escaping ((ServiceResult<List<Store>>)) -> Void) {
+  func storesNearBy(city: String, lat: Double, lon: Double, pagingURL: URL? = nil, completion: @escaping ((ServiceResult<List<Store>>)) -> Void) {
     var urlRequest: URLRequest
     urlRequest = URLRequest(url: pagingURL ?? URL(string: "https://lcboapi.com/stores")!)
     urlRequest.addValue("Token \(StoreService.APIKey)", forHTTPHeaderField: "Authorization")
@@ -43,7 +43,8 @@ final class StoreService: StoreServiceType {
           if let nextURLPath = result.pager.nextURL {
             nextURL = URL(string: StoreService.baseURL + nextURLPath)
           }
-          let list = List<PagedStore.Store>(items: result.stores, nextURL: nextURL)
+          let stores = result.stores.filter{ $0.city == city }
+          let list = List<PagedStore.Store>(items: stores, nextURL: nextURL)
           completion(ServiceResult<List<Store>>.success(list))
         case .failure(let error):
           completion(ServiceResult<List<Store>>.failure(error))

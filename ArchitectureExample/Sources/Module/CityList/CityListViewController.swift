@@ -123,7 +123,7 @@ extension CityListViewController: UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return (view.bounds.height - 20) / 5
+    return CGFloat(60.0)
   }
   
 }
