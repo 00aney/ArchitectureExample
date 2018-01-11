@@ -8,9 +8,38 @@
 
 import Foundation
 
+
 typealias Store = PagedStore.Store
 
+
 struct PagedStore: Codable {
+  
+  let status: Int
+  let message: String
+  let pager: Pager
+  let stores: [Store]
+  
+  enum CodingKeys: String, CodingKey {
+    case status
+    case message
+    case pager
+    case stores = "result"
+  }
+}
+
+
+extension PagedStore {
+  
+  init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    
+    let status = try container.decode(Int.self, forKey: .status)
+    let message = try? container.decode(String.self, forKey: .message)
+    let pager = try container.decode(Pager.self, forKey: .pager)
+    let stores = try container.decode([PagedStore.Store].self, forKey: .stores)
+    
+    self.init(status: status, message: message ?? "", pager: pager, stores: stores)
+  }
   
   struct Pager: Codable {
     let totalRecordCount: Int
@@ -40,6 +69,9 @@ struct PagedStore: Codable {
     let address2: String?
     let city: String
     let phone: String
+    let productCount: Int
+    let inventoryCount: Int
+    let postalCode: String
     
     enum CodingKeys: String, CodingKey {
       case id
@@ -49,32 +81,10 @@ struct PagedStore: Codable {
       case address2 = "address_line_2"
       case city
       case phone = "telephone"
+      case productCount = "products_count"
+      case inventoryCount = "inventory_count"
+      case postalCode = "postal_code"
     }
   }
   
-  let status: Int
-  let message: String
-  let pager: Pager
-  let stores: [Store]
-  
-  enum CodingKeys: String, CodingKey {
-    case status
-    case message
-    case pager
-    case stores = "result"
-  }
-}
-
-
-extension PagedStore {
-  init(from decoder: Decoder) throws {
-    let container = try decoder.container(keyedBy: CodingKeys.self)
-    
-    let status = try container.decode(Int.self, forKey: .status)
-    let message = try? container.decode(String.self, forKey: .message)
-    let pager = try container.decode(Pager.self, forKey: .pager)
-    let stores = try container.decode([PagedStore.Store].self, forKey: .stores)
-    
-    self.init(status: status, message: message ?? "", pager: pager, stores: stores)
-  }
 }

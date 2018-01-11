@@ -11,6 +11,7 @@ import UIKit
 
 protocol StoreListWireframeProtocol: class {
   func presentStoreListModule(from caller: AnyObject, city: City)
+  func presentStoreDetailModule(store: Store)
   
   /**
    * Add here your methods for communication PRESENTER -> WIREFRAME
@@ -21,31 +22,9 @@ protocol StoreListWireframeProtocol: class {
 class StoreListWireframe: StoreListWireframeProtocol {
   
   var rootWireframe: RootWireframe?
+  var storeDetailWireframe: StoreDetailWireframe?
   
   weak var storeListViewController: UIViewController?
-  
-//  var storeService: StoreService?
-  
-  static func createMudule(storeService: StoreServiceType = StoreService()) -> StoreListWireframe {
-    guard let view = UIStoryboard(name: "StoreListViewController", bundle: nil).instantiateViewController(withIdentifier: "StoreListViewController") as? StoreListViewController
-      else {
-        fatalError("Failed to initialize ViewController")
-    }
-    
-    let wireframe = StoreListWireframe()
-    let presenter = StoreListPresenter()
-    let interactor = StoreListInteractor(storeService: storeService)
-    
-    view.presenter = presenter
-    presenter.view = view
-    presenter.wireframe = wireframe
-    presenter.interactor = interactor
-    interactor.presenter = presenter
-    
-    wireframe.storeListViewController = view
-    
-    return wireframe
-  }
   
   func presentStoreListModule(from caller: AnyObject, city: City) {
     let storeService = StoreService()
@@ -71,6 +50,11 @@ class StoreListWireframe: StoreListWireframeProtocol {
     if let navigationController = caller as? UINavigationController {
       navigationController.pushViewController(view, animated: true)
     }
+  }
+  
+  func presentStoreDetailModule(store: Store) {
+    guard let navigationController = storeListViewController?.navigationController else { return }
+    storeDetailWireframe?.presentStoreDetailModule(from: navigationController, store: store)
   }
   
 }

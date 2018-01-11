@@ -16,6 +16,7 @@ protocol StoreDetailViewProtocol: class {
 
 final class StoreDetailViewController: UIViewController {
   
+  var presenter: StoreDetailPresenterProtocol?
   
   // MARK: View Life Cycle
   

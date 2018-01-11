@@ -25,7 +25,7 @@ class CityListWireframe: CityListWireframeProtocol {
   
   weak var cityListNavigationController: UINavigationController?
   
-  static func createMudule(cityService: CityServiceType) -> CityListWireframe {
+  static func createMudule(cityService: CityServiceType? = nil) -> CityListWireframe {
     guard let navigationController = UIStoryboard(name: "CityListViewController", bundle: nil).instantiateInitialViewController() as? UINavigationController
       else {
         fatalError("Failed to initialize ViewController")
@@ -38,7 +38,7 @@ class CityListWireframe: CityListWireframeProtocol {
     
     let wireframe = CityListWireframe()
     let presenter = CityListPresenter()
-    let interactor = CityListInteractor(cityService: cityService)
+    let interactor = CityListInteractor(cityService: cityService ?? CityService())
     
     view.presenter = presenter
     presenter.view = view

@@ -46,12 +46,16 @@ final class StoreListViewController: UIViewController {
 }
 
 
+// MARK: - StoreListViewProtocol
+
 extension StoreListViewController: StoreListViewProtocol {
   func show() {
     tableView.reloadData()
   }
 }
 
+
+// MARK: - UITableViewDataSource
 
 extension StoreListViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,14 +65,18 @@ extension StoreListViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "StoreListCell", for: indexPath) as! StoreListCell
     
-    presenter?.configureCell(cell, indexPath: indexPath)
+    presenter?.configureCell(cell, for: indexPath)
     return cell
   }
 }
 
 
+// MARK: - UITableViewDelegate
+
 extension StoreListViewController: UITableViewDelegate {
+  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print(indexPath)
+    presenter?.didSelectTableViewRowAt(indexPath: indexPath)
   }
+  
 }

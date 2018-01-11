@@ -21,6 +21,10 @@ protocol StoreDetailInteractorOutputProtocol: class {
 
 class StoreDetailPresenter: StoreDetailPresenterProtocol {
   weak var view: StoreDetailViewProtocol?
+  var wireframe: StoreDetailWireframeProtocol?
+  var interactor: StoreDetailInteractorInputProtocol?
+  
+  var store: Store?
 }
 
 

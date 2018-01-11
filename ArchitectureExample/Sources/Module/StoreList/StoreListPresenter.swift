@@ -12,7 +12,8 @@ protocol StoreListPresenterProtocol: class {
   func viewDidLoad()
   
   func numberOfRows(in section: Int) -> Int
-  func configureCell(_ cell: StoreListCell, indexPath: IndexPath)
+  func didSelectTableViewRowAt(indexPath: IndexPath)
+  func configureCell(_ cell: StoreListCell, for indexPath: IndexPath)
 }
 
 
@@ -40,7 +41,6 @@ final class StoreListPresenter {
 extension StoreListPresenter: StoreListPresenterProtocol {
   
   func viewDidLoad() {
-    print("viewDidLoad")
     interactor?.fetchStores(city: city!)
   }
   
@@ -48,9 +48,13 @@ extension StoreListPresenter: StoreListPresenterProtocol {
     return stores.count
   }
   
-  func configureCell(_ cell: StoreListCell, indexPath: IndexPath) {
+  func configureCell(_ cell: StoreListCell, for indexPath: IndexPath) {
     let store = stores[indexPath.row]
     cell.configure(name: store.name, address: store.address1, phone: store.phone)
+  }
+  
+  func didSelectTableViewRowAt(indexPath: IndexPath) {
+    wireframe?.presentStoreDetailModule(store: stores[indexPath.row])
   }
   
 }

@@ -243,10 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				BD9432D31FE8AFA100C0D6F3 /* AppDelegate */,
-				BDE05DDE1FE789710060BE1A /* Base */,
-				BDE05DDD1FE789640060BE1A /* StoreDetail */,
-				BDE05DDC1FE7895D0060BE1A /* StoreList */,
 				BDE05DDB1FE789460060BE1A /* CityList */,
+				BDE05DDC1FE7895D0060BE1A /* StoreList */,
+				BDE05DDD1FE789640060BE1A /* StoreDetail */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -288,13 +287,6 @@
 				BD7093C31FEA2CAF0037EB71 /* StoreDetailInteractor.swift */,
 			);
 			path = StoreDetail;
-			sourceTree = "<group>";
-		};
-		BDE05DDE1FE789710060BE1A /* Base */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

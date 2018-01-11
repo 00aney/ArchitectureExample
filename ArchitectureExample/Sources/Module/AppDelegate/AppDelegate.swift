@@ -27,10 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let rootWireframe = RootWireframe()
     rootWireframe.window = window
     
-    let cityService = CityService()
-    
     // CityList wireframe
-    let cityListWireframe = CityListWireframe.createMudule(cityService: cityService)
+    let cityListWireframe = CityListWireframe.createMudule()
     cityListWireframe.rootWireframe = rootWireframe
     
     // StoreList wireframe
@@ -39,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     cityListWireframe.storeListWireframe = storeListWireframe
 
     // StoreDetail wireframe
+    let storeDetailWireframe = StoreDetailWireframe()
+    storeDetailWireframe.rootWireframe = rootWireframe
+    storeListWireframe.storeDetailWireframe = storeDetailWireframe
     
     // AppDelegate wireframe
     let appDelegateWireframe = AppDelegateWireframe()
