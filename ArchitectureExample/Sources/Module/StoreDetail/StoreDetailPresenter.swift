@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol StoreDetailPresenterProtocol: class {
-  
+  func viewDidLoad()
 }
 
 
@@ -19,7 +19,7 @@ protocol StoreDetailInteractorOutputProtocol: class {
 }
 
 
-class StoreDetailPresenter: StoreDetailPresenterProtocol {
+class StoreDetailPresenter {
   weak var view: StoreDetailViewProtocol?
   var wireframe: StoreDetailWireframeProtocol?
   var interactor: StoreDetailInteractorInputProtocol?
@@ -27,6 +27,23 @@ class StoreDetailPresenter: StoreDetailPresenterProtocol {
   var store: Store?
 }
 
+
+// MARK: - StoreDetailPresenterProtocol
+
+extension StoreDetailPresenter: StoreDetailPresenterProtocol {
+  
+  func viewDidLoad() {
+    if let store = store {
+      view?.displayStoreDetail(store: store)
+    } else {
+      //fetch store
+    }
+  }
+  
+}
+
+
+// MARK: - StoreDetailInteractorOutputProtocol
 
 extension StoreDetailPresenter: StoreDetailInteractorOutputProtocol {
   
