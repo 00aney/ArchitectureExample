@@ -10,16 +10,21 @@ import Foundation
 
 
 protocol StoreDetailPresenterProtocol: class {
+  var view: StoreDetailViewProtocol? { get set }
+  var wireframe: StoreDetailWireframeProtocol? { get set }
+  var interactor: StoreDetailInteractorInputProtocol? { get set }
+  
+  // VIEW -> PRESENTER
   func viewDidLoad()
 }
 
 
 protocol StoreDetailInteractorOutputProtocol: class {
-  
+  // INTERACTOR -> PRESENTER
 }
 
 
-class StoreDetailPresenter {
+final class StoreDetailPresenter {
   weak var view: StoreDetailViewProtocol?
   var wireframe: StoreDetailWireframeProtocol?
   var interactor: StoreDetailInteractorInputProtocol?

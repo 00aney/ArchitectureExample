@@ -10,13 +10,21 @@ import UIKit
 
 
 protocol StoreDetailViewProtocol: class {
+  var presenter: StoreDetailPresenterProtocol? { get set }
+  
+  // PRESENTER -> VIEW
   func displayStoreDetail(store: Store)
 }
 
 
 final class StoreDetailViewController: UIViewController {
   
+  // MARK: Properties
+  
   var presenter: StoreDetailPresenterProtocol?
+  
+  
+  // MARK: UI
   
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var addressLabel: UILabel!

@@ -10,7 +10,10 @@ import UIKit
 
 
 protocol StoreListViewProtocol: class {
-  func show()
+  var presenter: StoreListPresenterProtocol? { get set }
+  
+  // PRESENTER -> VIEW
+  func displayLoadedScreen()
 }
 
 
@@ -35,7 +38,6 @@ final class StoreListViewController: UIViewController {
   }
   
   private func setupUI() {
-    print("setupUI")
   }
   
   private func setupBinding() {
@@ -49,15 +51,18 @@ final class StoreListViewController: UIViewController {
 // MARK: - StoreListViewProtocol
 
 extension StoreListViewController: StoreListViewProtocol {
-  func show() {
+  
+  func displayLoadedScreen() {
     tableView.reloadData()
   }
+  
 }
 
 
 // MARK: - UITableViewDataSource
 
 extension StoreListViewController: UITableViewDataSource {
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return presenter?.numberOfRows(in: section) ?? 0
   }
@@ -68,6 +73,7 @@ extension StoreListViewController: UITableViewDataSource {
     presenter?.configureCell(cell, for: indexPath)
     return cell
   }
+  
 }
 
 

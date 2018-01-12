@@ -11,15 +11,13 @@ import UIKit
 
 protocol StoreListWireframeProtocol: class {
   func presentStoreListModule(from caller: AnyObject, city: City)
-  func presentStoreDetailModule(store: Store)
   
-  /**
-   * Add here your methods for communication PRESENTER -> WIREFRAME
-   */
+  // PRESENTER -> WIREFRAME
+  func presentStoreDetailModule(store: Store)
 }
 
 
-class StoreListWireframe: StoreListWireframeProtocol {
+final class StoreListWireframe: StoreListWireframeProtocol {
   
   var rootWireframe: RootWireframe?
   var storeDetailWireframe: StoreDetailWireframe?

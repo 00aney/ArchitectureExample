@@ -8,26 +8,22 @@
 
 import UIKit
 
-class StoreListCell: UITableViewCell {
 
+final class StoreListCell: UITableViewCell {
+
+  // MARK: UI
+  
   @IBOutlet weak var phoneLabel: UILabel!
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var storeNameLabel: UILabel!
   
-  override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+  
+  // MARK: Configuring
+  
   func configure(name: String, address: String, phone: String) {
     storeNameLabel.text = name
     addressLabel.text = address
     phoneLabel.text = phone
   }
+  
 }

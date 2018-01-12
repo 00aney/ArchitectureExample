@@ -10,16 +10,12 @@ import Foundation
 
 
 protocol StoreDetailInteractorInputProtocol: class {
+  var presenter: StoreDetailInteractorOutputProtocol? { get set }
   
+  // PRESENTER -> INTERACTOR
 }
 
 
 class StoreDetailInteractor: StoreDetailInteractorInputProtocol {
   weak var presenter: StoreDetailInteractorOutputProtocol?
-  
-  init() {
-    
-  }
-  
 }
-

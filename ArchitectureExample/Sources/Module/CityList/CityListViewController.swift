@@ -10,8 +10,11 @@ import UIKit
 
 
 protocol CityListViewProtocol: class {
-  func showLoadingScreen()
-  func show()
+  var presenter: CityListPresenterProtocol? { get set }
+  
+  // PRESENTER -> VIEW
+  func displayLoadingScreen()
+  func displayLoadedScreen()
 }
 
 
@@ -46,13 +49,10 @@ final class CityListViewController: UIViewController {
     presenter?.viewDidLoad()
   }
   
-  
   private func setupUI() {
     loadingView = UIView()
     loadingView.translatesAutoresizingMaskIntoConstraints = false
     loadingView.backgroundColor = UIColor(white: 0, alpha: 0.5)
-    
-//    tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
   }
   
   private func setupBinding() {
@@ -95,20 +95,20 @@ final class CityListViewController: UIViewController {
 
 extension CityListViewController: CityListViewProtocol {
   
-  func showLoadingScreen() {
+  func displayLoadingScreen() {
     state = .loading
-    
     addLoadingView()
-    
     UIView.animate(withDuration: 0.2) {
       self.view.layoutIfNeeded()
     }
   }
   
-  func show() {
-    state = .loaded
+  func displayLoadedScreen() {
+    if state == .loading {
+      removeLoadingView()
+    }
     
-    removeLoadingView()
+    state = .loaded
   }
   
 }

@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
     setupAppWireframe()
@@ -46,11 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     appDelegateWireframe.cityListWireframe = cityListWireframe
     appDelegateWireframe.rootWireframe = rootWireframe
     
-    let appDelegateInteractor = AppDelegateInteractor()
     let appDelegatePresenter = AppDelegatePresenter()
     appDelegatePresenter.wireframe = appDelegateWireframe
-    appDelegatePresenter.interactor = appDelegateInteractor
-    appDelegateInteractor.presenter = appDelegatePresenter
     
     appDelegatePresenter.presentRootViewController()
   }

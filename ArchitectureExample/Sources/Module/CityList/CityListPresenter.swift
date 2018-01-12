@@ -10,16 +10,20 @@ import Foundation
 
 
 protocol CityListPresenterProtocol: class {
-  func viewDidLoad()
+  var view: CityListViewProtocol? { get set }
+  var interactor: CityListInteractorInputProtocol? { get set }
+  var wireframe: CityListWireframeProtocol? { get set }
   
+  // VIEW -> PRESENTER
+  func viewDidLoad()
   func numberOfRowsInSection(in section: Int) -> Int
   func configureCell(_ cell: CityListCell, for indexPath: IndexPath)
-  
   func didSelectRowAt(indexPath: IndexPath)
 }
 
 
 protocol CityListInteractorOutputProtocol: class {
+  // INTERACTOR -> PRESENTER
   func citiesFetched(cities: [City])
 }
 
@@ -33,7 +37,6 @@ final class CityListPresenter {
   var interactor: CityListInteractorInputProtocol?
   
   var cities: [City]?
-  
 }
 
 
@@ -42,7 +45,7 @@ final class CityListPresenter {
 extension CityListPresenter: CityListPresenterProtocol {
   
   func viewDidLoad() {
-    view?.showLoadingScreen()
+    view?.displayLoadingScreen()
     interactor?.fetchCities()
   }
   
@@ -69,7 +72,7 @@ extension CityListPresenter: CityListInteractorOutputProtocol {
   
   func citiesFetched(cities: [City]) {
     self.cities = cities
-    view?.show()
+    view?.displayLoadedScreen()
   }
   
 }

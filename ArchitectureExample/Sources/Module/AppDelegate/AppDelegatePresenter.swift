@@ -14,21 +14,17 @@ protocol AppDelegatePresenterProtocol: class {
   var interactor: AppDelegateInteractorInputProtocol? { get set }
   var wireframe: AppDelegateWireframeProtocol? { get set }
   
-  /**
-   * Add here your methods for communication VIEW -> PRESENTER
-   */
+  // VIEW -> PRESENTER
   func presentRootViewController()
 }
 
 
 protocol AppDelegateInteractorOutputProtocol: class {
-  /**
-   * Add here your methods for communication INTERACTOR -> PRESENTER
-   */
+  // INTERACTOR -> PRESENTER
 }
 
 
-class AppDelegatePresenter: AppDelegatePresenterProtocol {
+final class AppDelegatePresenter: AppDelegatePresenterProtocol {
 
   weak var view: AppDelegateViewProtocol?
   var interactor: AppDelegateInteractorInputProtocol?

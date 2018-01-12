@@ -8,9 +8,14 @@
 
 import Foundation
 
+
 protocol StoreListPresenterProtocol: class {
-  func viewDidLoad()
+  var view: StoreListViewProtocol? { get set }
+  var wireframe: StoreListWireframeProtocol? { get set }
+  var interactor: StoreListInteractorInputProtocol? { get set }
   
+  // VIEW -> PRESENTER
+  func viewDidLoad()
   func numberOfRows(in section: Int) -> Int
   func didSelectTableViewRowAt(indexPath: IndexPath)
   func configureCell(_ cell: StoreListCell, for indexPath: IndexPath)
@@ -18,6 +23,7 @@ protocol StoreListPresenterProtocol: class {
 
 
 protocol StoreListInteractorOutputProtocol: class {
+  // INTERACTOR -> PRESENTER
   func storesFetched(stores: [Store])
 }
 
@@ -31,7 +37,6 @@ final class StoreListPresenter {
   var interactor: StoreListInteractorInputProtocol?
   
   var city: City?
-  
   var stores = [Store]()
 }
 
@@ -66,7 +71,7 @@ extension StoreListPresenter: StoreListInteractorOutputProtocol {
   
   func storesFetched(stores: [Store]) {
     self.stores.append(contentsOf: stores)
-    view?.show()
+    view?.displayLoadedScreen()
   }
   
 }

@@ -28,13 +28,13 @@
 		BD9432D21FE8AEC300C0D6F3 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432D11FE8AEC300C0D6F3 /* RootWireframe.swift */; };
 		BD9432D51FE8B1CB00C0D6F3 /* AppDelegatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432D41FE8B1CB00C0D6F3 /* AppDelegatePresenter.swift */; };
 		BD9432D71FE8B29600C0D6F3 /* AppDelegateWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432D61FE8B29600C0D6F3 /* AppDelegateWireframe.swift */; };
-		BD9432D91FE8B41200C0D6F3 /* AppDelegateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432D81FE8B41200C0D6F3 /* AppDelegateInteractor.swift */; };
-		BD9432DB1FE8B49700C0D6F3 /* AppDelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432DA1FE8B49700C0D6F3 /* AppDelegateView.swift */; };
 		BD9432DD1FE8B6D600C0D6F3 /* CityListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432DC1FE8B6D600C0D6F3 /* CityListWireframe.swift */; };
 		BD9432DF1FE8DB5A00C0D6F3 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432DE1FE8DB5A00C0D6F3 /* CityListViewController.swift */; };
 		BD9432E11FE8DB6D00C0D6F3 /* CityListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432E01FE8DB6D00C0D6F3 /* CityListPresenter.swift */; };
 		BD9432E31FE8DB7700C0D6F3 /* CityListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9432E21FE8DB7700C0D6F3 /* CityListInteractor.swift */; };
 		BD9432E71FE8DBEB00C0D6F3 /* CityListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9432E61FE8DBEB00C0D6F3 /* CityListViewController.storyboard */; };
+		BDA62239200860CB00649E4B /* AppDelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA62237200860CB00649E4B /* AppDelegateView.swift */; };
+		BDA6223A200860CB00649E4B /* AppDelegateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA62238200860CB00649E4B /* AppDelegateInteractor.swift */; };
 		BDB5BBA0200496000049AE32 /* StoreListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB5BB9F200496000049AE32 /* StoreListCell.swift */; };
 		BDE05D881FE781CA0060BE1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE05D871FE781CA0060BE1A /* AppDelegate.swift */; };
 		BDE05D8F1FE781CA0060BE1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDE05D8E1FE781CA0060BE1A /* Assets.xcassets */; };
@@ -80,13 +80,13 @@
 		BD9432D11FE8AEC300C0D6F3 /* RootWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		BD9432D41FE8B1CB00C0D6F3 /* AppDelegatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegatePresenter.swift; sourceTree = "<group>"; };
 		BD9432D61FE8B29600C0D6F3 /* AppDelegateWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateWireframe.swift; sourceTree = "<group>"; };
-		BD9432D81FE8B41200C0D6F3 /* AppDelegateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateInteractor.swift; sourceTree = "<group>"; };
-		BD9432DA1FE8B49700C0D6F3 /* AppDelegateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateView.swift; sourceTree = "<group>"; };
 		BD9432DC1FE8B6D600C0D6F3 /* CityListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListWireframe.swift; sourceTree = "<group>"; };
 		BD9432DE1FE8DB5A00C0D6F3 /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		BD9432E01FE8DB6D00C0D6F3 /* CityListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListPresenter.swift; sourceTree = "<group>"; };
 		BD9432E21FE8DB7700C0D6F3 /* CityListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListInteractor.swift; sourceTree = "<group>"; };
 		BD9432E61FE8DBEB00C0D6F3 /* CityListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityListViewController.storyboard; sourceTree = "<group>"; };
+		BDA62237200860CB00649E4B /* AppDelegateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateView.swift; sourceTree = "<group>"; };
+		BDA62238200860CB00649E4B /* AppDelegateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateInteractor.swift; sourceTree = "<group>"; };
 		BDB5BB9F200496000049AE32 /* StoreListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListCell.swift; sourceTree = "<group>"; };
 		BDE05D841FE781CA0060BE1A /* ArchitectureExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArchitectureExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE05D871FE781CA0060BE1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,9 +145,9 @@
 			children = (
 				BDE05D871FE781CA0060BE1A /* AppDelegate.swift */,
 				BD9432D61FE8B29600C0D6F3 /* AppDelegateWireframe.swift */,
-				BD9432D81FE8B41200C0D6F3 /* AppDelegateInteractor.swift */,
+				BDA62237200860CB00649E4B /* AppDelegateView.swift */,
 				BD9432D41FE8B1CB00C0D6F3 /* AppDelegatePresenter.swift */,
-				BD9432DA1FE8B49700C0D6F3 /* AppDelegateView.swift */,
+				BDA62238200860CB00649E4B /* AppDelegateInteractor.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -253,8 +253,8 @@
 		BDE05DDB1FE789460060BE1A /* CityList */ = {
 			isa = PBXGroup;
 			children = (
-				BD688A431FF2396400E46B7A /* CityListCell.swift */,
 				BD688A441FF2396400E46B7A /* CityListCell.xib */,
+				BD688A431FF2396400E46B7A /* CityListCell.swift */,
 				BD9432E61FE8DBEB00C0D6F3 /* CityListViewController.storyboard */,
 				BD9432DC1FE8B6D600C0D6F3 /* CityListWireframe.swift */,
 				BD9432DE1FE8DB5A00C0D6F3 /* CityListViewController.swift */,
@@ -508,13 +508,13 @@
 				BD9432D01FE8ACC400C0D6F3 /* ServiceResult.swift in Sources */,
 				BDB5BBA0200496000049AE32 /* StoreListCell.swift in Sources */,
 				BD7093BC1FEA2BED0037EB71 /* StoreListInteractor.swift in Sources */,
+				BDA6223A200860CB00649E4B /* AppDelegateInteractor.swift in Sources */,
+				BDA62239200860CB00649E4B /* AppDelegateView.swift in Sources */,
 				BD7093B81FEA2BD90037EB71 /* StoreListViewController.swift in Sources */,
 				BD8E99B61FFB5E2C0009F50F /* Store.swift in Sources */,
 				BD9432D21FE8AEC300C0D6F3 /* RootWireframe.swift in Sources */,
-				BD9432DB1FE8B49700C0D6F3 /* AppDelegateView.swift in Sources */,
 				BD7093C21FEA2CA90037EB71 /* StoreDetailPresenter.swift in Sources */,
 				BD7093BA1FEA2BE40037EB71 /* StoreListPresenter.swift in Sources */,
-				BD9432D91FE8B41200C0D6F3 /* AppDelegateInteractor.swift in Sources */,
 				BD7093C01FEA2CA30037EB71 /* StoreDetailViewController.swift in Sources */,
 				BD7093C41FEA2CAF0037EB71 /* StoreDetailInteractor.swift in Sources */,
 				BD7093B61FEA2BC90037EB71 /* StoreListWireframe.swift in Sources */,

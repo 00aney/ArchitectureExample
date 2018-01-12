@@ -10,17 +10,23 @@ import Foundation
 
 
 protocol StoreListInteractorInputProtocol: class {
+  var presenter: StoreListInteractorOutputProtocol? { get set }
+  
+  // PRESENTER -> INTERACTOR
   func fetchStores(city: City)
 }
 
 
-class StoreListInteractor {
+final class StoreListInteractor {
   
   // MARK: Properties
   
   weak var presenter: StoreListInteractorOutputProtocol?
   var storeService: StoreServiceType?
   var nextURL: URL? = nil
+  
+  
+  // MARK: Initializing
   
   init(storeService: StoreServiceType) {
     self.storeService = storeService

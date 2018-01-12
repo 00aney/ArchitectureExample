@@ -11,14 +11,13 @@ import UIKit
 
 protocol CityListWireframeProtocol: class {
   func presentCityListModule(from caller: AnyObject)
+  
+  //Add here your methods for communication PRESENTER -> WIREFRAME
   func presentStoreListModule(city: City)
-  /**
-   * Add here your methods for communication PRESENTER -> WIREFRAME
-   */
 }
 
 
-class CityListWireframe: CityListWireframeProtocol {
+final class CityListWireframe: CityListWireframeProtocol {
   
   var rootWireframe: RootWireframe?
   var storeListWireframe: StoreListWireframe?
@@ -52,9 +51,8 @@ class CityListWireframe: CityListWireframeProtocol {
   }
   
   func presentCityListModule(from caller: AnyObject) {
-    if let navigationController = cityListNavigationController {
-      rootWireframe?.transitionToViewController(viewController: navigationController)
-    }
+    guard let navigationController = cityListNavigationController else { return }
+    rootWireframe?.transitionToViewController(viewController: navigationController)
   }
   
   func presentStoreListModule(city: City) {
